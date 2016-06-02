@@ -22,6 +22,7 @@ class Paperboy
       @earnings = @number_of_houses * 0.25
 
       @expirience = 0
+      @expirience += @number_of_houses
 
 
       if @number_of_houses.odd?
@@ -40,5 +41,5 @@ class Paperboy
 end
 
 ted = Paperboy.new('Ted', 25, 10, "even", 0 )
-ted.deliver(100, 220)
+ted.deliver(110, 250)
 p ted.report
