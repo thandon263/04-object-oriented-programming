@@ -40,6 +40,11 @@ class Paperboy
 
 end
 
+
 ted = Paperboy.new('Ted', 25, 10, "even", 0 )
 ted.deliver(110, 250)
 p ted.report
+
+ryan = Paperboy.new('Ryan', 12, 6, 'odd', 0)
+ryan.deliver(131, 237)
+p ryan.report
