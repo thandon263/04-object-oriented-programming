@@ -1,16 +1,24 @@
 class Rover
 
-  attr_accessor :location, :direction
+  attr_accessor :direction
+  attr_reader :x, :y
 
   def initialise(location, direction)
-    @location = location
+    @x = x
+    @y = y
     @direction = direction
   end
 
-  def read_instruction
-    p "Where do you want the Rover to go?"
-    @input = gets.chomp
-  end
+#
+    def instruction
+      case
+      when 'm'
+        "move to position"
+      when 'l' || 'r'
+        "turn to #{@direction}"
+      end
+
+    end
 
   def move(x, y)
     if @location == x && @location == y
@@ -22,13 +30,40 @@ class Rover
 
   def turn(n, s, e, w)
 
-      if @input == n || @input == s
+      if @inputA == n || @inputA == s
         @direction
       end
-      if @input == e || @input == w
+      if @inputB == e || @inputB == w
         @direction
       end
   end
 end
 
 rover1 = Rover.new
+
+# class Point
+#     attr_accessor :x,:y
+#
+#     def initialize(*args)
+#         @x, @y=args
+#     end
+#
+#     def instruction
+#       case
+#       when 'm'
+#         "move to position"
+#       when 'l' || 'r'
+#         "turn to #{@direction}"
+#       end
+#
+#     end
+#
+#     def move
+#
+#
+#     end
+#
+#
+# end
+
+array_of_coords = (1..n).map { |i, j| p Point.new(1, i) }
