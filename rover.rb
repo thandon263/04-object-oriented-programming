@@ -1,69 +1,97 @@
 class Rover
 
-  attr_accessor :direction
-  attr_reader :x, :y
+	attr_reader :input
 
-  def initialise(location, direction)
-    @x = x
-    @y = y
-    @direction = direction
-  end
+	Cardinal_points = ["North", "East", "South", "West"]
 
-#
-    def instruction
-      case
-      when 'm'
-        "move to position"
-      when 'l' || 'r'
-        "turn to #{@direction}"
-      end
+	def initialize (x = 0, y = 0, direction = "n")
+		@x_coordinate = x
+		@y_coordinate = y
+		@direction = direction
+	end
 
-    end
+	def instructions
+		puts "What do you want to do? Key:\n [M] to Move\n [R] to Right\n [L] to Left\n[Exit] to quit!"
+		@input = gets.strip.downcase
 
-  def move(x, y)
-    if @location == x && @location == y
-      return @location
-    else
-      return "No specific location"
-    end
-  end
+		@input.each_char do |x|
+			case x
+				when "l"
+					@direction = Cardinal_points[Cardinal_points.index(@direction)-1]
+				when "r"
+					@direction = Cardinal_points[(Cardinal_points.index(@direction)+1)%4]
+				when "m"
+					move
+				when "exit"
+					break
+			end
+		end
 
-  def turn(n, s, e, w)
+	end
 
-      if @inputA == n || @inputA == s
-        @direction
-      end
-      if @inputB == e || @inputB == w
-        @direction
-      end
-  end
+	def move
+		case @direction
+		when "n"
+			@y_coordinate += 1
+		when "s"
+			@y_coordinate -= 1
+		when "e"
+			@x_coordinate += 1
+		when "w"
+			@x_coordinate -= 1
+		end
+	end
+
+	def to_s
+		"The rover is now in ( #{@x_coordinate}, #{@y_coordinate} ) facing -> #{@direction}\n
+    FOR MORE INFORMATION - Use the key to move the ROVER\n"
+	end
+
 end
 
-rover1 = Rover.new
+apollo = Rover.new
 
-# class Point
-#     attr_accessor :x,:y
-#
-#     def initialize(*args)
-#         @x, @y=args
-#     end
-#
-#     def instruction
-#       case
-#       when 'm'
-#         "move to position"
-#       when 'l' || 'r'
-#         "turn to #{@direction}"
-#       end
-#
-#     end
-#
-#     def move
-#
-#
-#     end
-#
-#
-# end
+while true
+	apollo.instructions
+	puts apollo
 
-array_of_coords = (1..n).map { |i, j| p Point.new(1, i) }
+	if apollo.input == "exit"
+		exit
+	end
+
+end
+
+
+
+
+
+
+
+
+
+
+      # when 'l' && @direction == 'n'
+      #   return "The rover #{name} is facing West at points (#{@x}, #{@y})"
+      #   # Do something
+      # when 'l' && @direction == 's'
+      #   return "The rover #{name} is facing East at points (#{@x}, #{@y})"
+      #   # Do something
+      # when 'r' && @direction == 'n'
+      #   return "The rover #{name} is facing East at points (#{@x}, #{@y})"
+      #   # Do something
+      # when 'r' && @direction == 's'
+      #   return "The rover #{name} is facing West at points (#{@x}, #{@y})"
+      #   # Do something
+      # when 'l' && @direction == 'e'
+      #   return "The rover #{name} is facing North at points (#{@x}, #{@y})"
+      #   # Do something
+      # when 'r' && @direction == 'w'
+      #   return "The rover #{name} is facing North at points (#{@x}, #{@y})"
+      #   # Do something
+      # when 'l' && @direction == 'w'
+      #   return "The rover #{name} is facing South at points (#{@x}, #{@y})"
+      #   # Do something
+      # when 'r' && @direction == 'e'
+      #   return "The rover #{name} is facing South at points (#{@x}, #{@y})"
+      # when 'exit'
+      #   return exit
