@@ -2,7 +2,7 @@ class Rover
 
 	attr_reader :input
 
-	Cardinal_points = ["North", "East", "South", "West"]
+	Cardinal_points = ["n", "e", "s", "w"]
 
 	def initialize (x = 0, y = 0, direction = "n")
 		@x_coordinate = x
@@ -62,36 +62,36 @@ while true
 end
 
 
-
-
-
-
-
-
-
-
-      # when 'l' && @direction == 'n'
-      #   return "The rover #{name} is facing West at points (#{@x}, #{@y})"
-      #   # Do something
-      # when 'l' && @direction == 's'
-      #   return "The rover #{name} is facing East at points (#{@x}, #{@y})"
-      #   # Do something
-      # when 'r' && @direction == 'n'
-      #   return "The rover #{name} is facing East at points (#{@x}, #{@y})"
-      #   # Do something
-      # when 'r' && @direction == 's'
-      #   return "The rover #{name} is facing West at points (#{@x}, #{@y})"
-      #   # Do something
-      # when 'l' && @direction == 'e'
-      #   return "The rover #{name} is facing North at points (#{@x}, #{@y})"
-      #   # Do something
-      # when 'r' && @direction == 'w'
-      #   return "The rover #{name} is facing North at points (#{@x}, #{@y})"
-      #   # Do something
-      # when 'l' && @direction == 'w'
-      #   return "The rover #{name} is facing South at points (#{@x}, #{@y})"
-      #   # Do something
-      # when 'r' && @direction == 'e'
-      #   return "The rover #{name} is facing South at points (#{@x}, #{@y})"
-      # when 'exit'
-      #   return exit
+#
+#
+#
+#
+#
+#
+#
+#
+#       # when 'l' && @direction == 'n'
+#       #   return "The rover #{name} is facing West at points (#{@x}, #{@y})"
+#       #   # Do something
+#       # when 'l' && @direction == 's'
+#       #   return "The rover #{name} is facing East at points (#{@x}, #{@y})"
+#       #   # Do something
+#       # when 'r' && @direction == 'n'
+#       #   return "The rover #{name} is facing East at points (#{@x}, #{@y})"
+#       #   # Do something
+#       # when 'r' && @direction == 's'
+#       #   return "The rover #{name} is facing West at points (#{@x}, #{@y})"
+#       #   # Do something
+#       # when 'l' && @direction == 'e'
+#       #   return "The rover #{name} is facing North at points (#{@x}, #{@y})"
+#       #   # Do something
+#       # when 'r' && @direction == 'w'
+#       #   return "The rover #{name} is facing North at points (#{@x}, #{@y})"
+#       #   # Do something
+#       # when 'l' && @direction == 'w'
+#       #   return "The rover #{name} is facing South at points (#{@x}, #{@y})"
+#       #   # Do something
+#       # when 'r' && @direction == 'e'
+#       #   return "The rover #{name} is facing South at points (#{@x}, #{@y})"
+#       # when 'exit'
+#       #   return exit
